@@ -12,6 +12,7 @@ public class DishPageQueryDTO implements Serializable {
     private int pageSize;
 
     private String name;
+
     //分类id
     private Integer categoryId;
 
