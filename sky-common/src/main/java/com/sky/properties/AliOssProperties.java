@@ -15,3 +15,6 @@ public class AliOssProperties {
     private String bucketName;
 
 }
+ class A{
+
+}
