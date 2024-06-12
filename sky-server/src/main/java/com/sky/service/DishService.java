@@ -1,11 +1,14 @@
 package com.sky.service;
 
+import com.sky.constant.StatusConstant;
 import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
 import com.sky.entity.Dish;
+import com.sky.entity.Setmeal;
 import com.sky.result.PageResult;
 import com.sky.vo.DishVO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface DishService {
@@ -49,4 +52,9 @@ public interface DishService {
      * @return
      */
     List<DishVO> listWithFlavor(Dish dish);
+    public void startOrStop(Integer status, Long id);
+
+    //update employee set status = ? where id = ?
+
+
 }
