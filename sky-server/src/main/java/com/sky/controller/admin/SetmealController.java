@@ -29,12 +29,13 @@ public class SetmealController {
 
     /**
      * 新增套餐
+     *
      * @param setmealDTO
      * @return
      */
     @PostMapping
     @ApiOperation("新增套餐")
-    @CacheEvict(cacheNames = "setmealCache", key = "#setmealDTO.categoryId")
+    @CacheEvict(cacheNames = "setmealCache",key = "#setmealDTO.categoryId")//key: setmealCache::100
     public Result save(@RequestBody SetmealDTO setmealDTO) {
         setmealService.saveWithDish(setmealDTO);
         return Result.success();
@@ -42,6 +43,7 @@ public class SetmealController {
 
     /**
      * 分页查询
+     *
      * @param setmealPageQueryDTO
      * @return
      */
@@ -52,19 +54,20 @@ public class SetmealController {
         return Result.success(pageResult);
     }
 
-
     /**
      * 批量删除套餐
+     *
      * @param ids
      * @return
      */
     @DeleteMapping
     @ApiOperation("批量删除套餐")
     @CacheEvict(cacheNames = "setmealCache",allEntries = true)
-    public Result delete(@RequestParam List<Long> ids){
+    public Result delete(@RequestParam List<Long> ids) {
         setmealService.deleteBatch(ids);
         return Result.success();
     }
+
     /**
      * 根据id查询套餐，用于修改页面回显数据
      *
@@ -91,8 +94,10 @@ public class SetmealController {
         setmealService.update(setmealDTO);
         return Result.success();
     }
+
     /**
      * 套餐起售停售
+     *
      * @param status
      * @param id
      * @return
@@ -104,5 +109,4 @@ public class SetmealController {
         setmealService.startOrStop(status, id);
         return Result.success();
     }
-
 }

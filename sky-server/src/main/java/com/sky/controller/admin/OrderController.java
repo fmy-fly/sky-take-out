@@ -40,8 +40,6 @@ public class OrderController {
         return Result.success(pageResult);
     }
 
-
-
     /**
      * 各个状态的订单数量统计
      *
@@ -53,7 +51,6 @@ public class OrderController {
         OrderStatisticsVO orderStatisticsVO = orderService.statistics();
         return Result.success(orderStatisticsVO);
     }
-
 
     /**
      * 订单详情
@@ -80,8 +77,6 @@ public class OrderController {
         return Result.success();
     }
 
-
-
     /**
      * 拒单
      *
@@ -93,9 +88,6 @@ public class OrderController {
         orderService.rejection(ordersRejectionDTO);
         return Result.success();
     }
-
-
-
 
     /**
      * 取消订单
@@ -109,7 +101,6 @@ public class OrderController {
         return Result.success();
     }
 
-
     /**
      * 派送订单
      *
@@ -121,7 +112,6 @@ public class OrderController {
         orderService.delivery(id);
         return Result.success();
     }
-
 
     /**
      * 完成订单

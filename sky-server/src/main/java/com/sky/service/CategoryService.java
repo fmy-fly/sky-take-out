@@ -1,10 +1,8 @@
 package com.sky.service;
 
-import com.sky.annotation.AutoFill;
 import com.sky.dto.CategoryDTO;
 import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
-import com.sky.enumeration.OperationType;
 import com.sky.result.PageResult;
 import java.util.List;
 
@@ -14,7 +12,6 @@ public interface CategoryService {
      * 新增分类
      * @param categoryDTO
      */
-    @AutoFill(value = OperationType.INSERT)
     void save(CategoryDTO categoryDTO);
 
     /**
@@ -34,7 +31,6 @@ public interface CategoryService {
      * 修改分类
      * @param categoryDTO
      */
-    @AutoFill(value = OperationType.INSERT)
     void update(CategoryDTO categoryDTO);
 
     /**
@@ -42,7 +38,6 @@ public interface CategoryService {
      * @param status
      * @param id
      */
-    @AutoFill(value = OperationType.INSERT)
     void startOrStop(Integer status, Long id);
 
     /**
